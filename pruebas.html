@@ -16,30 +16,8 @@
         <div class="products-container">
             <h2 >My products 7</h2> 
           <hr>
-         <div class="productos-prueba" id="product-list">
-            <section class="product">
-                <img src="image1.jpg" alt="Product 1">
-                <h2>Product 1</h2>
-                <p>Price: $19.99</p>
-                <button>eliminar</button>
-                <img src="image4.jpg" alt="icono de eliminar" class="align-right">
-            </section>
-            
-            <section class="product">
-                <img src="image2.jpg" alt="Product 2" >
-                <h2>Product 2</h2>
-                <p>Price: $29.99</p>
-                <button>eliminar</button>
-                <img src="image4.jpg" alt="icono de eliminar" class="align-right">
-            </section>
-            
-            <section class="product">
-                <img src="image3.jpg" alt="Product 3">
-                <h2>Product 3</h2>
-                <p>Price: $39.99</p>
-                <button>eliminar</button>
-                <img src="image4.jpg" alt="icono de eliminar" class="align-right">
-            </section>
+         <div class="productos-prueba" id="product-list" data-product>
+        
          </div> 
         </div>
 
@@ -48,15 +26,18 @@
             <h2>Add Products</h2>
             <form class="add-product-form" id="add-product-form" data-form>
                 <label for="product-name">Name:</label>
-                <input type="text" id="product-name" name="product-name" required>
+                <input type="text" id="product-name" name="product-name" required 
+                data-name>
                 <br>
                 
                 <label for="product-price">Price:</label>
-                <input type="number" id="product-price" name="product-price" required>
+                <input type="number" id="product-price" name="product-price" required 
+                data-price>
                 <br>
                 
                 <label for="product-image">Image URL:</label>
-                <input type="text" id="product-image" name="product-image" required>
+                <input type="text" id="product-image" name="product-image" required 
+                data-image>
                 <br>
                 
                 <button type="submit">Send</button>
@@ -71,232 +52,17 @@
              AluraLatam
         </p>
     </footer>
+
+    
+
+    <script type="module" src="js/controllers/main.js"></script>
+    
 </body>
 </html>
 
-    <!--
-    <script type="module" src="js/controllers/main.js"></script>
-    <script>
-        const productList = document.getElementById('product-list');
-        const addProductForm = document.getElementById('add-product-form');
-
-        addProductForm.addEventListener('submit', function(event) {
-            event.preventDefault();
-
-            const productName = document.getElementById('product-name').value;
-            const productPrice = document.getElementById('product-price').value;
-            const productImage = document.getElementById('product-image').value;
-
-            const productSection = document.createElement('section');
-            productSection.className = 'product';
-            productSection.innerHTML = `
-                <img src="${productImage}" alt="${productName}">
-                <h2>${productName}</h2>
-                <p>Price: $${productPrice}</p>
-                <button>eliminar</button>
-                <img src="image4.jpg" alt="icono de eliminar" class="align-right">
-            `;
-
-            productList.appendChild(productSection);
-
-            addProductForm.reset();
-        });
-    </script>
-</body>
-
-
-
-</html><!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Store</title>
-    <link rel="stylesheet" href="pruebas.css"> 
-</head>
-<body>
-    <header>
-        <h1>Welcome to Our Product Store</h1>
-    </header>
- 
-    <main> 
-    <div class="responsive-prueba">    
-        <div class="products-container">
-            <h2 >My products 7</h2> 
-          <hr>
-         <div class="productos-prueba" id="product-list">
-            <section class="product">
-                <img src="image1.jpg" alt="Product 1">
-                <h2>Product 1</h2>
-                <p>Price: $19.99</p>
-                <button>eliminar</button>
-                <img src="image4.jpg" alt="icono de eliminar" class="align-right">
-            </section>
-            
-            <section class="product">
-                <img src="image2.jpg" alt="Product 2" >
-                <h2>Product 2</h2>
-                <p>Price: $29.99</p>
-                <button>eliminar</button>
-                <img src="image4.jpg" alt="icono de eliminar" class="align-right">
-            </section>
-            
-            <section class="product">
-                <img src="image3.jpg" alt="Product 3">
-                <h2>Product 3</h2>
-                <p>Price: $39.99</p>
-                <button>eliminar</button>
-                <img src="image4.jpg" alt="icono de eliminar" class="align-right">
-            </section>
-         </div> 
-        </div>
-
     
-        <section>
-            <h2>Add Products</h2>
-            <form class="add-product-form" id="add-product-form" data-form>
-                <label for="product-name">Name:</label>
-                <input type="text" id="product-name" name="product-name" required>
-                <br>
-                
-                <label for="product-price">Price:</label>
-                <input type="number" id="product-price" name="product-price" required>
-                <br>
-                
-                <label for="product-image">Image URL:</label>
-                <input type="text" id="product-image" name="product-image" required>
-                <br>
-                
-                <button type="submit">Send</button>
-                <button type="reset">Clean</button>
-            </form>
-        </section>   
-    </div>    
-    </main>
 
-    <footer>
-        <p>&copy; 2023 Desarrollado por: Patricio. <br>
-             AluraLatam
-        </p>
-    </footer>
-
-
-   
-    <script type="module" src="js/controllers/main.js"></script>
-    <script>
-
-       
-        const productList = document.getElementById('product-list');
-        const addProductForm = document.getElementById('add-product-form');
-
-        addProductForm.addEventListener('submit', function(event) {
-            event.preventDefault();
-
-            const productName = document.getElementById('product-name').value;
-            const productPrice = document.getElementById('product-price').value;
-            const productImage = document.getElementById('product-image').value;
-
-            const productSection = document.createElement('section');
-            productSection.className = 'product';
-            productSection.innerHTML = `
-                <img src="${productImage}" alt="${productName}">
-                <h2>${productName}</h2>
-                <p>Price: $${productPrice}</p>
-                <button>eliminar</button>
-                <img src="image4.jpg" alt="icono de eliminar" class="align-right">
-            `;
-
-            productList.appendChild(productSection);
-
-            addProductForm.reset();
-        });
-    </script>
-</body>
-</html>
-
-
-
-
-
-
-
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Store</title>
-    <link rel="stylesheet" href="pruebas.css"> 
-</head>
-<body>
-    <header>
-        <h1>Welcome to Our Product Store</h1>
-    </header>
  
-    <main> 
-    <div class="responsive-prueba">    
-        <div h class="products-container">
-            <h2 >My products 7</h2> 
-          <hr>
-         <div class="productos-prueba"> 
-            <section class="product">
-                <img src="C:\path\to\your\image1.jpg" alt="Product 1">
-                <h2>Product 1</h2>
-                <p>Price: $19.99</p>
-                <button>eliminar</button>
-                <img src="C:\path\to\your\image4.jpg" alt="icono de eliminar" class="align-right">
-            </section>
-            
-            <section class="product">
-                <img src="C:\path\to\your\image2.jpg" alt="Product 2" >
-                <h2>Product 2</h2>
-                <p>Price: $29.99</p>
-                <button>eliminar</button>
-                <img src="C:\path\to\your\image4.jpg" alt="icono de eliminar" class="align-right">
-            </section>
-            
-            <section class="product">
-                <img src="C:\path\to\your\image3.jpg" alt="Product 3">
-                <h2>Product 3</h2>
-                <p>Price: $39.99</p>
-                <button>eliminar</button>
-                <img src="C:\path\to\your\image4.jpg" alt="icono de eliminar" class="align-right">
-            </section>
-         </div> 
-        </div>
-
-    
-        <section>
-            <h2>Add Products</h2>
-            <form class="add-product-form" data-form>
-                <label for="product-name">Name:</label>
-                <input type="text" id="product-name" name="product-name" required>
-                <br>
-                
-                <label for="product-price">Price:</label>
-                <input type="number" id="product-price" name="product-price" required>
-                <br>
-                
-                <label for="product-image">Image URL:</label>
-                <input type="text" id="product-image" name="product-image" required>
-                <br>
-                
-                <button type="submit">Send</button>
-                <button type="reset">Clean</button>
-            </form>
-        </section>   
-    </div>    
-    </main>
-
-    <footer>
-        <p>&copy; 2023 Desarrollado por: Patricio. <br>
-             AluraLatam
-        </p>
-    </footer>
-    <script type="module" src="js/controllers/main.js"></script>
- Add Products Form -->
-
-
+ 
+ 
 

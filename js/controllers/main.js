@@ -1,20 +1,21 @@
-import { servicesProducts } from "../services/product-services";
+import { servicesProducts } from "../services/product-services.js";
 
 const productContainer = document.querySelector("[data-product]");
 const form = document.querySelector("[data-form]");
 
 function createCard({ name, price, image, id }) {
-  const card = document.createElement("div");
-  card.classList.add("card");
+  const card = document.createElement("section");
+  card.classList.add("product");
   card.innerHTML = `
+        <img src="${image}" alt="${name}">
     <h2>${name}</h2>
     <p>Price: $${price}</p>
-    <img src="${image}" alt="${name}">
-    <button class="btn-buy" data-id="${id}">Buy</button>
     <button class="btn-delete" data-id="${id}">Eliminar</button>
+    <button class="btn-buy" data-id="${id}">Buy</button>
   `;
   return card;
 }
+
 
 function addDeleteEvent(card, id) {
   const deleteButton = card.querySelector(".btn-delete");
@@ -44,6 +45,8 @@ const renderProducts = async () => {
 
 form.addEventListener("submit", async (Event) => {
   Event.preventDefault();
+console.log(Event);
+
 
   const name = document.querySelector("[data-name]").value;
   const price = document.querySelector("[data-price]").value;
@@ -100,76 +103,6 @@ renderProducts();
 
 
 
-
-
-
-
-
-
-/*import { servicesProducts } from "../services/product-services";
-
-const productContainer = document.querySelector("[data-product]");
-const form = document.querySelector("[data-form]");
-
-function createCard({ name, price, image, id }) {
-  const card = document.createElement("div");
-  card.classList.add("card");
-  card.innerHTML = `
-    <h2>${name}</h2>
-    <p>Price: $${price}</p>
-    <img src="${image}" alt="${name}">
-    <button class="btn-buy" data-id="${id}">Buy</button>
-    <button class="btn-delete" data-id="${id}">Eliminar</button>
-  `;
-  return card;
-}
-
-function addDeleteEvent(card, id) {
-  const deleteButton = card.querySelector(".btn-delete");
-  deleteButton.addEventListener("click", async () => {
-    try {
-      await servicesProducts.deleteProduct(id);
-      card.remove();
-      console.log(`Producto con id ${id} eliminado`);
-    } catch (error) {
-      console.error(`Error al eliminar el producto con id ${id}:`, error);
-    }
-  });
-}
-
-const renderProducts = async () => {
-  try {
-    const listProducts = await servicesProducts.productList();
-    listProducts.forEach((product) => {
-      const productCard = createCard(product);
-      productContainer.appendChild(productCard);
-      addDeleteEvent(productCard, product.id);
-    });
-  } catch (error) {
-    console.log("error al eliminar el producto", error);
-  }
-};
-
-form.addEventListener("submit", async (Event) => {
-  Event.preventDefault();
-
-  const name = document.querySelector("[data-name]").value;
-  const price = document.querySelector("[data-price]").value;
-  const image = document.querySelector("[data-image]").value;
-
-  try {
-    const newProduct = await servicesProducts.createProduct(name, price, image);
-    const newCard = createCard(newProduct);
-    productContainer.appendChild(newCard);
-    addDeleteEvent(newCard, newProduct.id);
-  } catch (error) {
-    console.error("Error al crear el producto:", error);
-  }
-
-  form.reset();
-});
-
-renderProducts();*/
 
 
 

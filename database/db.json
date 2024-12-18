@@ -1,22 +1,22 @@
 {
-    "products": [
-      {
-        "id": 1,
-        "name": "Product 1",
-        "price": 19.99,
-        "image": "http://path/to/your/image1.jpg"
-      },
-      {
-        "id": 2,
-        "name": "Product 2",
-        "price": 29.99,
-        "image": "http://path/to/your/image2.jpg"
-      },
-      {
-        "id": 3,
-        "name": "Product 3",
-        "price": 39.99,
-        "image": "http://path/to/your/image3.jpg"
-      }
-    ]
-  }
+  "products": [
+    {
+      "id": 1,
+      "name": "Product 1",
+      "price": 19.99,
+      "image": "http://path/to/your/image1.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Product 2",
+      "price": 29.99,
+      "image": "http://path/to/your/image2.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Product 3",
+      "price": 39.99,
+      "image": "http://path/to/your/image3.jpg"
+    }
+  ]
+}
